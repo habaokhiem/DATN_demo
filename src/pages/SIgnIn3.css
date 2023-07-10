@@ -1,0 +1,215 @@
+.sign-in-3-child,
+.sign-in-3-item {
+  position: absolute;
+  top: -235px;
+  left: 934px;
+  border-radius: 50%;
+  background-color: #b4c4ff;
+  filter: blur(500px);
+  width: 769px;
+  height: 769px;
+}
+.sign-in-3-item {
+  top: 486px;
+  left: -310px;
+}
+.logo-icon1 {
+  position: absolute;
+  top: 42px;
+  left: 89px;
+  width: 73px;
+  height: 33px;
+}
+.xin-cho-bn {
+  align-self: stretch;
+  position: relative;
+  font-weight: 500;
+}
+.google-icon {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+.ng-nhp-bng {
+  position: relative;
+  font-weight: 300;
+}
+.google-parent {
+  border-radius: 1000px;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(185, 178, 226, 0.64);
+  width: 382px;
+  display: flex;
+  flex-direction: row;
+  padding: 16px 34px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 20px;
+}
+.xin-cho-bn-tr-li-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+}
+.or-child {
+  position: relative;
+  width: 151px;
+  height: 1px;
+}
+.or {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  font-size: 20px;
+}
+.frame-parent1698 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 55px;
+}
+.tn-ng-nhp {
+  position: relative;
+}
+.div317,
+.sooyaaa334455gmailcom-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.sooyaaa334455gmailcom-container {
+  border-radius: 1000px;
+  background-color: #fff;
+  border: 1px solid #d4d4d4;
+  box-sizing: border-box;
+  width: 382px;
+  flex-direction: row;
+  padding: 16px 34px;
+  color: #b8b8b8;
+}
+.div317 {
+  flex-direction: column;
+  gap: 8px;
+}
+.vuesaxlineareye-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.div318,
+.mt-khu-parent7,
+.parent31 {
+  display: flex;
+  align-items: flex-start;
+}
+.mt-khu-parent7 {
+  border-radius: 1000px;
+  background-color: #fff;
+  box-shadow: 0 4px 15px #ffa39e;
+  border: 1px solid #ff7875;
+  box-sizing: border-box;
+  width: 382px;
+  flex-direction: row;
+  padding: 16px 34px;
+  justify-content: space-between;
+  color: #b8b8b8;
+}
+.div318,
+.parent31 {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.div318 {
+  gap: 8px;
+  color: #ff7875;
+}
+.parent31 {
+  gap: 16px;
+}
+.qun-mt-khu1 {
+  position: relative;
+  font-weight: 300;
+  color: #8c8c8c;
+}
+.mt-khu-nhp-sai-parent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 14px;
+  color: #ff574d;
+}
+.frame-parent1700 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.ng-nhp7 {
+  position: relative;
+  font-weight: 500;
+  display: inline-block;
+  width: 101px;
+}
+.div319,
+.frame-parent1697,
+.frame-parent1699 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.div319 {
+  border-radius: 28px;
+  background-color: #4a72ff;
+  box-shadow: 0 4px 15px rgba(110, 142, 255, 0.64);
+  width: 382px;
+  height: 56px;
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: 12px 77px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+}
+.frame-parent1697,
+.frame-parent1699 {
+  justify-content: flex-start;
+  gap: 24px;
+}
+.frame-parent1699 {
+  text-align: left;
+  font-size: 16px;
+}
+.frame-parent1697 {
+  position: absolute;
+  top: calc(50% - 321px);
+  left: calc(50% - 251px);
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(185, 178, 226, 0.64);
+  padding: 48px 60px;
+}
+.sign-in-3 {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  height: 1080px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 28px;
+  color: #271e4a;
+  font-family: Kanit;
+}

@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-kanit: Kanit;
+  --font-inter: Inter;
+
+  /* font sizes */
+  --font-size-5xl: 24px;
+  --font-size-base: 16px;
+  --font-size-17xl: 36px;
+  --font-size-xl: 20px;
+  --font-size-13xl: 32px;
+  --font-size-81xl: 100px;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+
+  /* Colors */
+  --black-100: #1c1c1c;
+  --black-40: rgba(0, 0, 0, 0.4);
+  --color-gray-100: rgba(255, 255, 255, 0.5);
+  --color-white: #fff;
+  --color-darkslateblue: #271e4a;
+  --text-colors-subtitle: #b8b8b8;
+  --color-thistle: #d8d2fc;
+  --color-plum: #e3a3e0;
+
+  /* Gaps */
+  --gap-21xl: 40px;
+  --gap-9xs: 4px;
+  --gap-5xl: 24px;
+  --gap-5xs: 8px;
+  --gap-base: 16px;
+
+  /* Paddings */
+  --padding-21xl: 40px;
+  --padding-5xs: 8px;
+  --padding-5xl: 24px;
+  --padding-base: 16px;
+  --padding-11xl: 30px;
+  --padding-9xs: 4px;
+
+  /* border radiuses */
+  --br-21xl: 40px;
+  --br-5xs: 8px;
+  --br-5xl: 24px;
+  --br-xl: 20px;
+  --br-9xs: 4px;
+}
+
+* {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
