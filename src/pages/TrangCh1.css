@@ -37,6 +37,16 @@
 .vuesaxlinearhome-parent23,
 .vuesaxlinearreceipt-edit-parent22 {
   border-radius: 20px;
+  backdrop-filter: blur(14px);
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.vuesaxlinearhome-parent23_picked {
+  border-radius: 20px;
   box-shadow: 0 4px 15px rgba(216, 210, 252, 0.64);
   backdrop-filter: blur(14px);
   display: flex;
@@ -96,7 +106,7 @@
 }
 .frame-parent2179 {
   position: absolute;
-  height: 100%;
+  /* height: 100%; */
   top: 0;
   bottom: 0;
   left: calc(50% - 900px);
@@ -719,7 +729,7 @@
 }
 .group-parent23 {
   position: absolute;
-  height: calc(100% - 121px);
+  /* height: calc(100% - 121px); */
   top: 61px;
   bottom: 60px;
   left: calc(50% - 909px);
@@ -743,7 +753,7 @@
     #e0e9f4
   );
   width: 100%;
-  height: 6000px;
+  height: 6100px;
   overflow: hidden;
   text-align: left;
   font-size: 20px;

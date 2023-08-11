@@ -435,11 +435,23 @@
   gap: 16px;
 }
 .vuesaxlinearhome-parent11 {
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 .vuesaxlinearhome-parent11,
 .vuesaxlinearreceipt-edit-parent11 {
   border-radius: 20px;
+  /* box-shadow: 0 4px 15px rgba(216, 210, 252, 0.64); */
+  /* backdrop-filter: blur(14px); */
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.vuesaxlinearhome-parent11_picked {
+  border-radius: 20px;
+  background-color: #fff;
   box-shadow: 0 4px 15px rgba(216, 210, 252, 0.64);
   backdrop-filter: blur(14px);
   display: flex;

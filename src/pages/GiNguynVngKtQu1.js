@@ -280,23 +280,23 @@ const GiNguynVngKtQu1 = ({ goToDanhSachNguyenVong }) => {
                   </div>
                   <div className="frame-parent784">
                     <div className="frame-parent777">
-                      <div className="nth0415">NTH04</div>
-                      <div className="ngn-ng-anh39">Ngôn ngữ Anh</div>
-                      <div className="d0133">D01</div>
-                      <div className="d0133">80%</div>
+                      <div className="nth0415">ME2y</div>
+                      <div className="ngn-ng-anh39">Kỹ thuật cơ khí</div>
+                      <div className="d0133">A00</div>
+                      <div className="d0133">0.22542 (c)</div>
                     </div>
-                    <div className="frame-parent777">
+                    {/* <div className="frame-parent777">
                       <div className="nth0415">NTH05</div>
                       <div className="ngn-ng-anh39">Ngôn ngữ Pháp</div>
                       <div className="d0133">D01, D03</div>
-                      <div className="d0133">75%</div>
-                    </div>
+                      <div className="d0133">0.22542 (c)</div>
+                    </div> */}
                   </div>
                 </div>
               </div>
               <div className="i-hc-bch-khoa-h-ni-parent2">
                 <div className="i-hc-bch-container3">
-                  <ul className="i-hc-bch16">Đại học Kinh tế Quốc dân</ul>
+                  <ul className="i-hc-bch16">Đại học Công nghiệp Việt Hung</ul>
                 </div>
                 <div className="frame-parent783">
                   <div className="m-ngnh-parent61">
@@ -307,55 +307,26 @@ const GiNguynVngKtQu1 = ({ goToDanhSachNguyenVong }) => {
                   </div>
                   <div className="frame-parent784">
                     <div className="frame-parent777">
-                      <div className="nth0415">NTH01-02</div>
-                      <div className="ngn-ng-anh39">Kinh tế quốc tế</div>
-                      <div className="d0133">{`A00, A01, D01, D03, D05, D06, D07 `}</div>
-                      <div className="d0133">75%</div>
+                      <div className="nth0415">7340201</div>
+                      <div className="ngn-ng-anh39">Tài chính - Ngân hàng</div>
+                      <div className="d0133">{`A00`}</div>
+                      <div className="d0133">0.10122 (c)</div>
                     </div>
-                    <div className="frame-parent777">
+                    {/* <div className="frame-parent777">
                       <div className="nth0415">NTH01-02</div>
                       <div className="ngn-ng-anh39">Kinh tế</div>
                       <div className="d0133">
                         A00, A01, D01, D03, D05, D06, D07
                       </div>
-                      <div className="d0133">74%</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="i-hc-bch-khoa-h-ni-parent2">
-                <div className="i-hc-bch-container3">
-                  <ul className="i-hc-bch16">Đại học FPT (Cơ sở Hà Nội)</ul>
-                </div>
-                <div className="frame-parent783">
-                  <div className="m-ngnh-parent61">
-                    <div className="m-ngnh63">Mã ngành</div>
-                    <div className="tn-ngnh66">Tên ngành</div>
-                    <div className="khi-thi64">Khối thi</div>
-                    <div className="khi-thi64">Độ phù hợp</div>
-                  </div>
-                  <div className="frame-wrapper175">
-                    <div className="nth01-01-parent16">
-                      <div className="nth0415">NTH01-01</div>
-                      <div className="ngn-ng-anh39">Luật</div>
-                      <div className="d0133">D01</div>
-                      <div className="d0133">72%</div>
-                    </div>
-                  </div>
-                  <div className="frame-wrapper175">
-                    <div className="nth01-01-parent16">
-                      <div className="nth0415">NTH01-01</div>
-                      <div className="ngn-ng-anh39">Luật</div>
-                      <div className="d0133">D01</div>
-                      <div className="d0133">70%</div>
-                    </div>
+                      <div className="d0133">0.22542 (c)</div>
+                    </div> */}
                   </div>
                 </div>
               </div>
               <div className="i-hc-bch-khoa-h-ni-parent2">
                 <div className="i-hc-bch-container3">
                   <ul className="i-hc-bch16">
-                    Đại học Ngoại thương (Cơ sở Hà Nội)
+                    Học viện Chính sách và Phát triển
                   </ul>
                 </div>
                 <div className="frame-parent783">
@@ -367,29 +338,25 @@ const GiNguynVngKtQu1 = ({ goToDanhSachNguyenVong }) => {
                   </div>
                   <div className="frame-wrapper175">
                     <div className="nth01-01-parent16">
-                      <div className="nth0415">NTH02</div>
-                      <div className="ngn-ng-anh39">Quản trị khách sạn</div>
-                      <div className="d0133">
-                        A00, A01, D01, D03, D05, D06, D07
-                      </div>
-                      <div className="d0133">70%</div>
+                      <div className="nth0415">7340301</div>
+                      <div className="ngn-ng-anh39">Kế toán</div>
+                      <div className="d0133">A00</div>
+                      <div className="d0133">0.22542 (c)</div>
                     </div>
                   </div>
-                  <div className="frame-wrapper175">
+                  {/* <div className="frame-wrapper175">
                     <div className="nth01-01-parent16">
-                      <div className="nth0415">NTH02</div>
-                      <div className="ngn-ng-anh39">Quản trị khách sạn</div>
-                      <div className="d0133">
-                        A00, A01, D01, D03, D05, D06, D07
-                      </div>
-                      <div className="d0133">69%</div>
+                      <div className="nth0415">NTH01-01</div>
+                      <div className="ngn-ng-anh39">Luật</div>
+                      <div className="d0133">D01</div>
+                      <div className="d0133">0.10122 (c)</div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="i-hc-bch-khoa-h-ni-parent2">
                 <div className="i-hc-bch-container3">
-                  <ul className="i-hc-bch16">Đại học Thương mại</ul>
+                  <ul className="i-hc-bch16">Đại học Thuỷ Lợi</ul>
                 </div>
                 <div className="frame-parent783">
                   <div className="m-ngnh-parent61">
@@ -400,24 +367,57 @@ const GiNguynVngKtQu1 = ({ goToDanhSachNguyenVong }) => {
                   </div>
                   <div className="frame-wrapper175">
                     <div className="nth01-01-parent16">
-                      <div className="nth0415">NTH02</div>
-                      <div className="ngn-ng-anh39">Quản trị khách sạn</div>
-                      <div className="d0133">
-                        A00, A01, D01, D03, D05, D06, D07
+                      <div className="nth0415">TLA107</div>
+                      <div className="ngn-ng-anh39">
+                        Kỹ thuật cấp thoát nước
                       </div>
-                      <div className="d0133">68%</div>
+                      <div className="d0133">A00</div>
+                      <div className="d0133">0.00000 (d)</div>
                     </div>
                   </div>
-                  <div className="frame-wrapper175">
+                  {/* <div className="frame-wrapper175">
                     <div className="nth01-01-parent16">
                       <div className="nth0415">NTH02</div>
                       <div className="ngn-ng-anh39">Quản trị khách sạn</div>
                       <div className="d0133">
                         A00, A01, D01, D03, D05, D06, D07
                       </div>
-                      <div className="d0133">67%</div>
+                      <div className="d0133">0.10122 (c)</div>
+                    </div>
+                  </div> */}
+                </div>
+              </div>
+              <div className="i-hc-bch-khoa-h-ni-parent2">
+                <div className="i-hc-bch-container3">
+                  <ul className="i-hc-bch16">
+                    Đại học Công nghệ - Đại học Quốc gia Hà Nội
+                  </ul>
+                </div>
+                <div className="frame-parent783">
+                  <div className="m-ngnh-parent61">
+                    <div className="m-ngnh63">Mã ngành</div>
+                    <div className="tn-ngnh66">Tên ngành</div>
+                    <div className="khi-thi64">Khối thi</div>
+                    <div className="khi-thi64">Độ phù hợp</div>
+                  </div>
+                  <div className="frame-wrapper175">
+                    <div className="nth01-01-parent16">
+                      <div className="nth0415">CN12</div>
+                      <div className="ngn-ng-anh39">Trí tuệ nhân tạo</div>
+                      <div className="d0133">A00</div>
+                      <div className="d0133">0.00000 (d)</div>
                     </div>
                   </div>
+                  {/* <div className="frame-wrapper175">
+                    <div className="nth01-01-parent16">
+                      <div className="nth0415">NTH02</div>
+                      <div className="ngn-ng-anh39">Quản trị khách sạn</div>
+                      <div className="d0133">
+                        A00, A01, D01, D03, D05, D06, D07
+                      </div>
+                      <div className="d0133">0.10122 (c)</div>
+                    </div>
+                  </div> */}
                 </div>
               </div>
             </div>

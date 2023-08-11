@@ -271,6 +271,30 @@ const DanhSchNguynVng = ({ goToDanhSachNguyenVongDeXuat }) => {
             <div className="frame-parent754">
               <div className="i-hc-fpt-c-s-h-ni-container">
                 <div className="i-hc-bch-container2">
+                  <ul className="i-hc-bch15">Đại học Kinh Tế Quốc dân</ul>
+                </div>
+                <div className="frame-parent755">
+                  <div className="m-ngnh-parent56">
+                    <div className="m-ngnh58">Mã ngành</div>
+                    <div className="tn-ngnh61">Tên ngành</div>
+                    <div className="khi-thi59">Khối thi</div>
+                  </div>
+                  <div className="frame-parent756">
+                    <div className="frame-parent749">
+                      <div className="nth0414">7320301</div>
+                      <div className="ngn-ng-anh38">Kế toán</div>
+                      <div className="d0130">A00</div>
+                    </div>
+                    {/* <div className="frame-parent749">
+                      <div className="nth0414">NTH05</div>
+                      <div className="ngn-ng-anh38">Ngôn ngữ Pháp</div>
+                      <div className="d0130">D01, D03</div>
+                    </div> */}
+                  </div>
+                </div>
+              </div>
+              <div className="i-hc-fpt-c-s-h-ni-container">
+                <div className="i-hc-bch-container2">
                   <ul className="i-hc-bch15">Đại học Bách khoa Hà Nội</ul>
                 </div>
                 <div className="frame-parent755">
@@ -281,47 +305,23 @@ const DanhSchNguynVng = ({ goToDanhSachNguyenVongDeXuat }) => {
                   </div>
                   <div className="frame-parent756">
                     <div className="frame-parent749">
-                      <div className="nth0414">NTH04</div>
-                      <div className="ngn-ng-anh38">Ngôn ngữ Anh</div>
-                      <div className="d0130">D01</div>
+                      <div className="nth0414">ME2y</div>
+                      <div className="ngn-ng-anh38">Kỹ thuật Cơ khí</div>
+                      <div className="d0130">{`A01`}</div>
                     </div>
-                    <div className="frame-parent749">
-                      <div className="nth0414">NTH05</div>
-                      <div className="ngn-ng-anh38">Ngôn ngữ Pháp</div>
-                      <div className="d0130">D01, D03</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="i-hc-fpt-c-s-h-ni-container">
-                <div className="i-hc-bch-container2">
-                  <ul className="i-hc-bch15">Đại học Kinh tế Quốc dân</ul>
-                </div>
-                <div className="frame-parent755">
-                  <div className="m-ngnh-parent56">
-                    <div className="m-ngnh58">Mã ngành</div>
-                    <div className="tn-ngnh61">Tên ngành</div>
-                    <div className="khi-thi59">Khối thi</div>
-                  </div>
-                  <div className="frame-parent756">
-                    <div className="frame-parent749">
-                      <div className="nth0414">NTH01-02</div>
-                      <div className="ngn-ng-anh38">Kinh tế quốc tế</div>
-                      <div className="d0130">{`A00, A01, D01, D03, D05, D06, D07 `}</div>
-                    </div>
-                    <div className="frame-parent749">
+                    {/* <div className="frame-parent749">
                       <div className="nth0414">NTH01-02</div>
                       <div className="ngn-ng-anh38">Kinh tế</div>
                       <div className="d0130">
                         A00, A01, D01, D03, D05, D06, D07
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
               <div className="i-hc-fpt-c-s-h-ni-container">
                 <div className="i-hc-bch-container2">
-                  <ul className="i-hc-bch15">Đại học FPT (Cơ sở Hà Nội)</ul>
+                  <ul className="i-hc-bch15">Đại học Bách khoa Hà Nội</ul>
                 </div>
                 <div className="frame-parent755">
                   <div className="m-ngnh-parent56">
@@ -331,21 +331,21 @@ const DanhSchNguynVng = ({ goToDanhSachNguyenVongDeXuat }) => {
                   </div>
                   <div className="frame-wrapper167">
                     <div className="nth01-01-parent14">
-                      <div className="nth0414">NTH01-01</div>
-                      <div className="ngn-ng-anh38">Luật</div>
-                      <div className="d0130">D01</div>
+                      <div className="nth0414">MI1y</div>
+                      <div className="ngn-ng-anh38">Toán - Tin</div>
+                      <div className="d0130">A00</div>
                     </div>
                   </div>
-                  <div className="frame-wrapper167">
+                  {/* <div className="frame-wrapper167">
                     <div className="nth01-01-parent14">
                       <div className="nth0414">NTH01-01</div>
                       <div className="ngn-ng-anh38">Luật</div>
                       <div className="d0130">D01</div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
-              <div className="i-hc-fpt-c-s-h-ni-container">
+              {/* <div className="i-hc-fpt-c-s-h-ni-container">
                 <div className="i-hc-bch-container2">
                   <ul className="i-hc-bch15">
                     Đại học Ngoại thương (Cơ sở Hà Nội)
@@ -406,7 +406,7 @@ const DanhSchNguynVng = ({ goToDanhSachNguyenVongDeXuat }) => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="frame-parent762">

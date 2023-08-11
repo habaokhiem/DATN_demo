@@ -2,6 +2,11 @@
   position: relative;
   font-weight: 500;
 }
+.danh-sch-nguyn20_title {
+  position: relative;
+  font-weight: 500;
+  font-size: 38px;
+}
 .iconoutlinedapplicationbell44 {
   position: relative;
   width: 36px;
@@ -336,7 +341,8 @@
 }
 .frame-parent1173 {
   position: absolute;
-  top: calc(50% - 448px);
+  /* top: calc(50% - 448px); */
+  top: 40px;
   left: calc(50% - 640px);
   width: 1500px;
   flex-direction: column;

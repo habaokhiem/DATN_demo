@@ -83,11 +83,26 @@
 }
 .sooyaaa334455gmailcom6 {
   position: relative;
-  color: inherit;
+  color: #b8b8b8;
   text-decoration: none;
 }
 .sooyaaa334455gmailcom6:focus {
   outline: none;
+}
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #b8b8b8;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #b8b8b8;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #b8b8b8;
 }
 .div342,
 .sooyaaa334455gmailcom-wrapper4 {
@@ -98,7 +113,7 @@
 }
 .sooyaaa334455gmailcom-wrapper4 {
   border-radius: 1000px;
-  background-color: #f2f5ff;
+  /* background-color: #f2f5ff; */
   box-shadow: 0 4px 15px rgba(185, 178, 226, 0.64);
   flex-direction: row;
   padding: 16px 34px;
@@ -276,7 +291,7 @@
   position: relative;
   background-color: #fff;
   width: 100%;
-  height: 1080px;
+  height: 100vh;
   overflow: hidden;
   text-align: center;
   font-size: 28px;

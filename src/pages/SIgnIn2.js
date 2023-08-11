@@ -1,6 +1,9 @@
 import { useState } from "react";
 import "./SIgnIn2.css";
-const SIgnIn2 = ({ loginSuccess }) => {
+import { Encrypt } from "../constants/utils";
+import { apiUrl } from "../constants/api";
+import axios from "axios";
+const SIgnIn2 = ({ loginSuccess, goToXetTuyenDaiHoc, signUpScreen }) => {
   const [usernamePlaceholder, setUsernamePlaceholder] = useState(false);
   const [username, setUsername] = useState("");
   const [passwordPlaceholder, setPasswordPlaceholder] = useState(false);
@@ -35,16 +38,22 @@ const SIgnIn2 = ({ loginSuccess }) => {
                   {/* <div className="ng-nhp-bng1">sooyaaa334455@gmail.com</div> */}
                   {!usernamePlaceholder && !username && (
                     <div
+                      style={{ color: "#b8b8b8" }}
                       onClick={() => {
                         setUsernamePlaceholder(true);
                       }}
                       className="email16"
                     >
-                      sooyaaa334455gmailcom6
+                      sooyaaa334455@gmail.com
                     </div>
                   )}
                   <input
-                    style={{ border: "none", width: "150px" }}
+                    style={{
+                      border: "none",
+                      width: "150px",
+                      color: "#271E4A",
+                      height: "25px",
+                    }}
                     value={username}
                     onFocus={() => {
                       setUsernamePlaceholder(true);
@@ -64,6 +73,7 @@ const SIgnIn2 = ({ loginSuccess }) => {
                 <div className="mt-khu-parent8">
                   {!passwordPlaceholder && !password && (
                     <div
+                      style={{ color: "#b8b8b8" }}
                       onClick={() => {
                         setPasswordPlaceholder(true);
                       }}
@@ -73,7 +83,7 @@ const SIgnIn2 = ({ loginSuccess }) => {
                     </div>
                   )}
                   <input
-                    style={{ border: "none", width: "150px" }}
+                    style={{ border: "none", width: "150px", color: "#271E4A" }}
                     value={password}
                     type={isShowPassword ? "text" : "password"}
                     onFocus={() => {
@@ -103,14 +113,55 @@ const SIgnIn2 = ({ loginSuccess }) => {
                 </div>
               </div>
             </div>
-            <div style={styles.button} className="qun-mt-khu2">
-              Quên mật khẩu?
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                width: "100%",
+                justifyContent: "space-between",
+              }}
+            >
+              <div
+                style={{
+                  ...styles.button,
+                  color: "#7B61FF",
+                  fontWeight: 300,
+                  fontSize: "14px",
+                }}
+                onClick={() => {
+                  signUpScreen();
+                }}
+              >
+                Bạn chưa có tài khoản?
+              </div>
+              <div style={styles.button} className="qun-mt-khu2">
+                Quên mật khẩu?
+              </div>
             </div>
           </div>
           <div
             style={styles.button}
             onClick={() => {
-              loginSuccess();
+              // loginSuccess();
+              let body = {
+                username: username,
+                password: Encrypt(username, password),
+              };
+              axios
+                .post(`${apiUrl}/login`, body)
+                .then((res) => {
+                  if (res.data.error) {
+                    alert("Email hoặc mật khẩu không chính xác");
+                    return;
+                  } else {
+                    localStorage.setItem("user", JSON.stringify(res.data.data));
+                    goToXetTuyenDaiHoc();
+                  }
+                })
+                .catch((err) => {
+                  console.log("err: ", err);
+                });
+              // goToXetTuyenDaiHoc();
             }}
             className="div322"
           >

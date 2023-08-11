@@ -1,6 +1,9 @@
 import { useState } from "react";
 import "./SIgnUp3.css";
-const SIgnUp3 = ({ goToLoginScreen }) => {
+import axios from "axios";
+import { apiUrl } from "../constants/api";
+import { Encrypt } from "../constants/utils";
+const SIgnUp3 = ({ goToLoginScreen, goToXetTuyenDaiHoc }) => {
   const [emailPlaceholder, setEmailPlaceholder] = useState(false);
   const [email, setEmail] = useState("");
   const [namePlaceholder, setNamePlaceholder] = useState(false);
@@ -41,8 +44,8 @@ const SIgnUp3 = ({ goToLoginScreen }) => {
               <div className="email16">Email</div>
               <div className="sooyaaa334455gmailcom-wrapper4">
                 {!emailPlaceholder && !email && (
-                  <a
-                    className="sooyaaa334455gmailcom6"
+                  <div
+                    className="email16"
                     // href="mailto:sooyaa334455@gmail.com"
                     // target="_blank"
                     onClick={() => {
@@ -50,10 +53,15 @@ const SIgnUp3 = ({ goToLoginScreen }) => {
                     }}
                   >
                     sooyaaa334455@gmail.com
-                  </a>
+                  </div>
                 )}
                 <input
-                  style={{ border: "none", width: "100%" }}
+                  style={{
+                    border: "none",
+                    width: "100%",
+                    height: "25px",
+                    color: "#271E4A",
+                  }}
                   value={email}
                   onFocus={() => {
                     setEmailPlaceholder(true);
@@ -72,7 +80,6 @@ const SIgnUp3 = ({ goToLoginScreen }) => {
               <div className="email16">Họ Tên*</div>
               <div className="frame-parent1722">
                 <div className="nguyn-wrapper9">
-                  {/* <div className="email16">Nguyễn</div> */}
                   {!namePlaceholder && !fullName && (
                     <div
                       onClick={() => {
@@ -84,7 +91,12 @@ const SIgnUp3 = ({ goToLoginScreen }) => {
                     </div>
                   )}
                   <input
-                    style={{ border: "none", width: "50px" }}
+                    style={{
+                      border: "none",
+                      width: "90px",
+                      height: "25px",
+                      color: "#271E4A",
+                    }}
                     value={fullName}
                     onFocus={() => {
                       setNamePlaceholder(true);
@@ -99,7 +111,6 @@ const SIgnUp3 = ({ goToLoginScreen }) => {
                   ></input>
                 </div>
                 <div className="nguyn-wrapper9">
-                  {/* <div className="email16">Văn A</div> */}
                   {!firstNamePlaceholder && !firstName && (
                     <div
                       onClick={() => {
@@ -111,7 +122,12 @@ const SIgnUp3 = ({ goToLoginScreen }) => {
                     </div>
                   )}
                   <input
-                    style={{ border: "none", width: "100px" }}
+                    style={{
+                      border: "none",
+                      width: "90px",
+                      height: "25px",
+                      color: "#271E4A",
+                    }}
                     value={firstName}
                     onFocus={() => {
                       setFirstNamePlaceholder(true);
@@ -130,7 +146,6 @@ const SIgnUp3 = ({ goToLoginScreen }) => {
             <div className="div342">
               <div className="email16">Tên đăng nhập*</div>
               <div className="tn-ng-nhp-frame">
-                {/* <div className="email16">Tên đăng nhập</div> */}
                 {!usernamePlaceholder && !username && (
                   <div
                     onClick={() => {
@@ -142,7 +157,12 @@ const SIgnUp3 = ({ goToLoginScreen }) => {
                   </div>
                 )}
                 <input
-                  style={{ border: "none", width: "100px" }}
+                  style={{
+                    border: "none",
+                    width: "280px",
+                    height: "25px",
+                    color: "#271E4A",
+                  }}
                   value={username}
                   onFocus={() => {
                     setUsernamePlaceholder(true);
@@ -160,7 +180,6 @@ const SIgnUp3 = ({ goToLoginScreen }) => {
             <div className="div342">
               <div className="email16">Mật khẩu*</div>
               <div className="mt-khu-parent12">
-                {/* <div className="email16">Mật khẩu</div> */}
                 {!passwordPlaceholder && !password && (
                   <div
                     onClick={() => {
@@ -172,7 +191,12 @@ const SIgnUp3 = ({ goToLoginScreen }) => {
                   </div>
                 )}
                 <input
-                  style={{ border: "none", width: "100px" }}
+                  style={{
+                    border: "none",
+                    width: "280px",
+                    height: "25px",
+                    color: "#271E4A",
+                  }}
                   value={password}
                   type={isShowPassword ? "text" : "password"}
                   onFocus={() => {
@@ -203,7 +227,7 @@ const SIgnUp3 = ({ goToLoginScreen }) => {
             </div>
             <div className="div342">
               <div className="email16">Xác thực mật khẩu*</div>
-              <div className="frame-parent1723">
+              <div className="mt-khu-parent12">
                 <div className="ellipse-parent2">
                   {/* <div className="frame-child954" />
                   <div className="frame-child954" />
@@ -226,7 +250,12 @@ const SIgnUp3 = ({ goToLoginScreen }) => {
                     </div>
                   )}
                   <input
-                    style={{ border: "none", width: "100px" }}
+                    style={{
+                      border: "none",
+                      width: "280px",
+                      height: "25px",
+                      color: "#271E4A",
+                    }}
                     value={rePassword}
                     type={isShowRePassword ? "text" : "password"}
                     onFocus={() => {
@@ -251,7 +280,7 @@ const SIgnUp3 = ({ goToLoginScreen }) => {
                     setIsShowRePassword(!isShowRePassword);
                   }}
                   src={
-                    isShowRePassword
+                    !isShowRePassword
                       ? "./vuesaxlineareyeslash2.svg"
                       : "./vuesaxlineareye4.svg"
                   }
@@ -277,7 +306,45 @@ const SIgnUp3 = ({ goToLoginScreen }) => {
             <div
               style={styles.button}
               onClick={() => {
-                goToLoginScreen();
+                let body = {
+                  email: email,
+                  username: username,
+                  password: Encrypt(email, password),
+                  password_username: Encrypt(username, password),
+                  firstName: firstName,
+                  lastName: fullName,
+                };
+                //signup
+                axios
+                  .post(`${apiUrl}/signup`, body)
+                  .then((res) => {
+                    let body = {
+                      username: username,
+                      email: email,
+                      password: Encrypt(username, password),
+                    };
+                    //go to login screen
+                    axios
+                      .post(`${apiUrl}/login`, body)
+                      .then((res) => {
+                        if (res.data.error) {
+                          alert("Email hoặc mật khẩu không chính xác");
+                          return;
+                        } else {
+                          localStorage.setItem(
+                            "user",
+                            JSON.stringify(res.data.data)
+                          );
+                          goToXetTuyenDaiHoc();
+                        }
+                      })
+                      .catch((err) => {
+                        console.log("err: ", err);
+                      });
+                  })
+                  .catch((err) => {
+                    console.log(err);
+                  });
               }}
               className="div349"
             >

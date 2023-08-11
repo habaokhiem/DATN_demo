@@ -269,7 +269,7 @@ const DanhSchNguynVngNgnh = () => {
                   <div className="frame-parent711">
                     <div className="ngn-ng-anh-parent">
                       <div className="ngn-ng-anh15">Ngôn ngữ Anh</div>
-                      <div className="ngn-ng-anh15">80%</div>
+                      <div className="ngn-ng-anh15">0.22542 (c)</div>
                     </div>
                     <div className="ngn-ng-anh-parent">
                       <div className="ngn-ng-anh15">Ngôn ngữ Anh</div>

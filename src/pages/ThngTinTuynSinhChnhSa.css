@@ -1,4 +1,4 @@
-.thng-tin-cc10 {
+/* .thng-tin-cc10 {
   flex: 1;
   position: relative;
   font-weight: 500;
@@ -71,23 +71,6 @@
 }
 .thng-mi-hai6 {
   font-weight: 300;
-}
-.by-parent8,
-.frame-parent304,
-.vuesaxlineartimer-parent8 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 8px;
-}
-.by-parent8,
-.frame-parent304 {
-  align-items: flex-start;
-}
-.frame-parent304 {
-  gap: 16px;
-  font-size: 16px;
 }
 .i-hc-ngoi-thng-c-s-h-n-parent3 {
   flex: 1;
@@ -705,18 +688,6 @@
   color: #1c1c1c;
   font-family: Inter;
 }
-.frame-parent299 {
-  position: absolute;
-  height: calc(100% - 120px);
-  top: 60px;
-  bottom: 60px;
-  left: calc(50% - 909px);
-  border-radius: 16px;
-  background-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(14px);
-  width: 1800px;
-  overflow: hidden;
-}
 .thongtintuyensinhchinhsua3 {
   position: relative;
   background: linear-gradient(
@@ -737,4 +708,4 @@
   font-size: 36px;
   color: #271e4a;
   font-family: Kanit;
-}
+} */

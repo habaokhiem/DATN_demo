@@ -554,7 +554,7 @@
 }
 .frame-parent1072 {
   position: absolute;
-  top: calc(50% - 175px);
+  top: calc(7% - 175px);
   left: calc(50% - 187px);
   border-radius: 24px;
   box-shadow: 0 4px 15px rgba(216, 210, 252, 0.64);
@@ -562,6 +562,7 @@
   height: 351px;
   font-size: 18px;
   color: #ca79c6;
+  z-index: 999;
 }
 .ng-xut-1-2 {
   position: relative;

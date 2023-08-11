@@ -1,5 +1,5 @@
 import { useState } from "react";
-import TrangCh1 from "./pages/TrangCh1";
+import TrangCh1, { styles } from "./pages/TrangCh1";
 import TrangCh2 from "./pages/TrangCh2";
 import TrangCh12 from "./pages/TrangCh12";
 import ThngTinTuynSinh from "./pages/ThngTinTuynSinh";
@@ -90,9 +90,22 @@ import ThngTinTuynSinhThmTr11 from "./pages/ThngTinTuynSinhThmTr11";
 import ThngTinTuynSinh1111 from "./pages/ThngTinTuynSinh1111";
 import ThngTinTuynSinhChnhSa21 from "./pages/ThngTinTuynSinhChnhSa21";
 import ThngTinTuynSinhChnhSa31 from "./pages/ThngTinTuynSinhChnhSa31";
+import KSTC1 from "./pages/k-s-t-c1";
+import KSTC3 from "./pages/k-s-t-c3";
+import KSTC4 from "./pages/k-s-t-c4";
+import KSTC5 from "./pages/k-s-t-c5";
+import KSTC6 from "./pages/k-s-t-c6";
+import KSTC7 from "./pages/k-s-t-c7";
+import KSTC8 from "./pages/k-s-t-c8";
+import KSTC9 from "./pages/k-s-t-c9";
+import KSTC10 from "./pages/k-s-t-c10";
+import KSTC11 from "./pages/k-s-t-c11";
+import KSTC12 from "./pages/k-s-t-c12";
+import LogIn from "./components/main/SignIn";
+import SignUp from "./components/main/SignUp";
 
 const Main = () => {
-  const [page, setPage] = useState(69);
+  const [page, setPage] = useState(1);
   const goToDetailUniversity = () => {
     setPage(7);
   };
@@ -176,7 +189,7 @@ const Main = () => {
   };
   return (
     <div>
-      <button
+      {/* <button
         style={{ backgroundColor: "#E2D6F5", border: "none" }}
         onClick={() => {
           if (page === 0) setPage(86);
@@ -194,12 +207,13 @@ const Main = () => {
         }}
       >
         Next
-      </button>
+      </button> */}
       {page === 0 && <TrangCh2 goToXetTuyenDaiHoc={goToXetTuyenDaiHoc} />}
       {page === 1 && (
         <TrangCh1
           goToDetailUniversity={goToDetailUniversity}
           goToNhomTinhCach={goToNhomTinhCach}
+          goToLoginScreen={goToLoginScreen}
         />
       )}
       {page === 2 && <TrangCh13 />}
@@ -281,11 +295,22 @@ const Main = () => {
         <GiNguynVng1 goToDanhSachNguyenVong={goToDanhSachNguyenVong} />
       )}
       {page === 70 && <SIgnIn3 />}
-      {page === 71 && <SIgnIn2 loginSuccess={loginSuccess} />}
+      {page === 71 && (
+        <LogIn
+          loginSuccess={loginSuccess}
+          goToXetTuyenDaiHoc={goToXetTuyenDaiHoc}
+          signUpScreen={signUpScreen}
+        />
+      )}
       {page === 72 && <SIgnIn1 />}
       {page === 73 && <SIgnUp42 />}
       {page === 74 && <SIgnUp41 />}
-      {page === 75 && <SIgnUp3 goToLoginScreen={goToLoginScreen} />}
+      {page === 75 && (
+        <SignUp
+          goToLoginScreen={goToLoginScreen}
+          goToXetTuyenDaiHoc={goToXetTuyenDaiHoc}
+        />
+      )}
       {page === 76 && <ForgotPassword72 />}
       {page === 77 && <ForgotPassword8 />}
       {page === 78 && <ForgotPassword71 />}
@@ -297,6 +322,24 @@ const Main = () => {
       {page === 84 && <ForgotPassword31 />}
       {page === 85 && <ForgotPassword2 />}
       {page === 86 && <ForgotPassword1 />}
+      {/* {page === 87 && <KSTC1 />}
+      {page === 88 && <KSTC3 />}
+      {page === 89 && <KSTC4 />}
+      {page === 90 && <KSTC5 />}
+      {page === 91 && <KSTC6 />}
+      {page === 92 && <KSTC7 />}
+      {page === 93 && <KSTC8 />}
+      {page === 94 && <KSTC9 />}
+      {page === 95 && <KSTC10 />}
+      {page === 96 && <KSTC11 />}
+      {page === 97 && <KSTC12 />} */}
+      {/* <div style={styles.button} className="vuesaxlinearmessage-wrapper">
+        <img
+          className="vuesaxlinearmessage-icon1"
+          alt=""
+          src="/vuesaxlinearmessage1.svg"
+        />
+      </div> */}
     </div>
   );
 };

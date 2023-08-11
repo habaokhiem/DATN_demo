@@ -1,7 +1,7 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from 'app/store';
-import { AppPayload, User } from 'models';
-import { AuthState, LoginPayload } from './types';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "app/store";
+import { AppPayload, User } from "models";
+import { AuthState, LoginPayload } from "./types";
 
 const initialState: AuthState = {
   isLoggedIn: false,
@@ -10,7 +10,7 @@ const initialState: AuthState = {
 };
 
 const authSlice = createSlice({
-  name: 'authSlice',
+  name: "authSlice",
   initialState,
   reducers: {
     action_Login: (state, action: PayloadAction<LoginPayload>) => {
@@ -24,7 +24,10 @@ const authSlice = createSlice({
     action_Login_Failed: (state, action: PayloadAction<any>) => {
       state.logging = false;
     },
-    action_Login_Other: (state, action: PayloadAction<AppPayload<LoginPayload>>) => {
+    action_Login_Other: (
+      state,
+      action: PayloadAction<AppPayload<LoginPayload>>
+    ) => {
       console.log(action);
     },
 

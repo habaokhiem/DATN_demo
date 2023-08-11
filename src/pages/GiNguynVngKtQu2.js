@@ -266,7 +266,7 @@ const GiNguynVngKtQu2 = () => {
                         <div className="nth0413">NTH04</div>
                         <div className="ngn-ng-anh14">Ngôn ngữ Anh</div>
                         <div className="d0127">D01</div>
-                        <div className="d0127">80%</div>
+                        <div className="d0127">aaaa</div>
                       </div>
                       <div className="frame-parent635">
                         <div className="nth0413">NTH05</div>

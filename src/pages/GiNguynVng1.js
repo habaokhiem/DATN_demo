@@ -49,10 +49,6 @@ const GiNguynVng1 = ({ goToDanhSachNguyenVong }) => {
   ]);
 
   const send = () => {
-    console.log("name: ", name);
-    console.log("academic: ", academic);
-    console.log("personality: ", personality);
-    console.log("listAspiration: ", listAspiration);
 
     axios
       .post(`${apiUrl}/survey/add`, {
@@ -71,7 +67,6 @@ const GiNguynVng1 = ({ goToDanhSachNguyenVong }) => {
         },
       })
       .then((res) => {
-        console.log(res);
         toast.success(
           `Cảm ơn bạn đã điền hết cái mớ khảo sát này của mình nhé ❤️`,
           {
@@ -169,7 +164,6 @@ const GiNguynVng1 = ({ goToDanhSachNguyenVong }) => {
 
   const fetchListMajor = async (universityId) => {
     const result = await axios(`${apiUrl}/major/${universityId}`);
-    console.log("curUniversity: ", curUniversity);
     let index = curUniversity.index;
     updateAspiration(index, "university", curUniversity.inputValue);
     updateAspiration(index, "major", "");
@@ -179,10 +173,6 @@ const GiNguynVng1 = ({ goToDanhSachNguyenVong }) => {
   const fetchListBlock = async (majorId) => {
     const result = await axios(`${apiUrl}/block/${majorId}`);
     let index = curMajor.index;
-    console.log(
-      "result.data.dataaaaaaaaaaaaaa: ",
-      result.data.data[0]?.id_type.split(",")
-    );
     updateAspiration(index, "block", "");
     updateAspiration(
       index,
@@ -1007,7 +997,6 @@ const GiNguynVng1 = ({ goToDanhSachNguyenVong }) => {
                               // defaultValue={4}
                               value={item.university}
                               onChange={(inputValue) => {
-                                console.log("inputValue: ", inputValue);
                                 setCurUniversity({ index, inputValue });
                               }}
                               // onChange={(inputValue) => {
@@ -1172,7 +1161,6 @@ const GiNguynVng1 = ({ goToDanhSachNguyenVong }) => {
                               // defaultValue={4}
                               value={item.major}
                               onChange={(inputValue) => {
-                                console.log("inputValue: ", inputValue);
                                 setCurMajor({ index, inputValue });
                                 updateAspiration(index, "major", inputValue);
                               }}
@@ -1306,7 +1294,6 @@ const GiNguynVng1 = ({ goToDanhSachNguyenVong }) => {
                               //   onChangePersonality(inputValue);
                               // }}
                               options={item.listBlock.map((item) => {
-                                console.log("item: ", item);
                                 return {
                                   value: item,
                                   label: item,

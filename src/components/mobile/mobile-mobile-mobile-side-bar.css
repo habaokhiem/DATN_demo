@@ -1,0 +1,413 @@
+.mobilemobilemobileborder2 {
+  position: absolute;
+  top: 0;
+  right: 2.33px;
+  border-radius: 2.67px;
+  border: 1px solid #191d21;
+  box-sizing: border-box;
+  width: 22px;
+  height: 11.33px;
+  opacity: 0.35;
+  mix-blend-mode: normal;
+}
+.mobilemobilecap-icon2 {
+  position: absolute;
+  top: 3.67px;
+  right: 0;
+  width: 1.33px;
+  height: 4px;
+  opacity: 0.4;
+  mix-blend-mode: normal;
+}
+.mobilemobilemobilecapacity2 {
+  position: absolute;
+  top: 2px;
+  right: 4.33px;
+  border-radius: 1.33px;
+  background-color: #191d21;
+  width: 18px;
+  height: 7.33px;
+}
+.mobilemobilebattery3 {
+  position: absolute;
+  top: 17.33px;
+  right: 14.34px;
+  width: 24.33px;
+  height: 11.33px;
+}
+.mobilemobilemobilewifi-icon3 {
+  position: relative;
+  width: 15.33px;
+  height: 11px;
+}
+.mobilemobilemobilecellular-con-icon3 {
+  position: relative;
+  width: 17px;
+  height: 10.67px;
+}
+.mobilemobiletime2 {
+  position: absolute;
+  top: calc(50% - 3.5px);
+  left: 0;
+  letter-spacing: -0.3px;
+  font-weight: 600;
+  display: inline-block;
+  width: 54px;
+}
+.mobiletime-style3 {
+  position: absolute;
+  top: 7.33px;
+  left: 21px;
+  width: 54px;
+  height: 21px;
+}
+.mobilemobilestatus-bar3 {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 187.5px);
+  width: 375px;
+  height: 44px;
+  text-align: center;
+  font-size: 15px;
+  color: #191d21;
+  font-family: "SF Pro Text";
+}
+.mobileframe-427319074 {
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 15px rgba(216, 210, 252, 0.64);
+  backdrop-filter: blur(14px);
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  padding: 8px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+}
+.mobiletrang-ch {
+  position: relative;
+  letter-spacing: -1px;
+  line-height: 112%;
+  font-weight: 500;
+}
+.mobileframe-427319571 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.mobileng-nhp {
+  position: relative;
+  font-weight: 500;
+}
+.mobileframe-427319401 {
+  border-radius: 8px;
+  background-color: #271e4a;
+  display: flex;
+  flex-direction: row;
+  padding: 6px 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 14px;
+  color: #fff;
+}
+.mobileframe-427319558 {
+  align-self: stretch;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(216, 210, 252, 0.64);
+  display: flex;
+  flex-direction: row;
+  padding: 12px 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+.mobilemobiletext6 {
+  letter-spacing: -1px;
+  line-height: 112%;
+  width: 335px;
+}
+.mobilemobiletext6,
+.mobilemobiletext7,
+.mobilemobiletext8 {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+.mobilemobiletext7 {
+  font-size: 24px;
+  letter-spacing: -1px;
+  line-height: 112%;
+  font-weight: 500;
+  width: 335px;
+}
+.mobilemobiletext8 {
+  font-size: 16px;
+  font-weight: 300;
+  width: 297px;
+}
+.mobileframe-427319541 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.mobileframe-427319543,
+.mobileframe-427319546,
+.mobilemobileframe-427319547 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.mobileframe-427319546 {
+  font-size: 40px;
+  color: #191d21;
+}
+.mobilemobileframe-427319547 {
+  position: absolute;
+  top: 60px;
+  left: calc(50% - 167.5px);
+  gap: 16px;
+}
+.mobilemobilembti-l-g,
+.mobilexem-thm {
+  position: relative;
+  font-weight: 600;
+}
+.mobilexem-thm {
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Kanit;
+  color: #b8b8b8;
+}
+.mobileframe-427319285,
+.mobileframe-427319549 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.mobileframe-427319285 {
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.mobileframe-427319292 {
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(216, 210, 252, 0.64);
+  width: 343px;
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.mobileframe-4273192851 {
+  align-self: stretch;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.mobilethu-gn1 {
+  position: relative;
+  font-size: 14px;
+  font-family: Kanit;
+  color: #b8b8b8;
+}
+.mobileframe-4273195492,
+.mobilemobileframe-427319557 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.mobileframe-4273195492 {
+  align-self: stretch;
+  flex-direction: row;
+  gap: 12px;
+}
+.mobilemobileframe-427319557 {
+  position: absolute;
+  top: 292px;
+  left: 16px;
+  flex-direction: column;
+  gap: 16px;
+  font-family: Roboto;
+}
+.mobilemobilemobilehome-indicat2 {
+  position: absolute;
+  bottom: 8px;
+  left: calc(50% - 66.5px);
+  border-radius: 100px;
+  background-color: #acb8c2;
+  width: 134px;
+  height: 5px;
+  opacity: 0.4;
+}
+.mobilemobilehome-bar4 {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 187.5px);
+  width: 375px;
+  height: 34px;
+}
+.mobilechevron-arrow-right-icon {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+.mobilemobilebutton-arrow {
+  border-radius: 160px;
+  background-color: #271e4a;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+  align-items: center;
+  justify-content: center;
+}
+.mobilenhm-tnh-cch {
+  position: relative;
+}
+.mobilemobileframe-427319540 {
+  position: absolute;
+  width: calc(100% - 212px);
+  right: 102px;
+  bottom: 34px;
+  left: 110px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  font-size: 20px;
+}
+.mobile19 {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 187.5px);
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(14px);
+  width: 375px;
+  overflow: hidden;
+}
+.mobilemobilerectangle-48-icon2 {
+  position: relative;
+  border-radius: 64px;
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+}
+.mobilemobiletext9 {
+  position: relative;
+  line-height: 20px;
+  font-weight: 500;
+}
+.mobileframe-427319071 {
+  position: absolute;
+  top: 32px;
+  left: calc(50% - 131.5px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.mobilemobilevuesaxlinearhome-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.mobileframe-48095499 {
+  background-color: #fff;
+}
+.mobileframe-48095499,
+.mobileframe-48095506 {
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(216, 210, 252, 0.64);
+  backdrop-filter: blur(14px);
+  display: flex;
+  flex-direction: row;
+  padding: 8px 14px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.mobileframe-4273190741,
+.mobileframe-48095499-parent {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+}
+.mobileframe-48095499-parent {
+  top: 152px;
+  left: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.mobileframe-4273190741 {
+  top: 60px;
+  left: 291px;
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(216, 210, 252, 0.64);
+  backdrop-filter: blur(14px);
+  height: 40px;
+  flex-direction: row;
+  padding: 8px;
+  box-sizing: border-box;
+  align-items: center;
+}
+.mobilemobile,
+.mobilemobileframe-427319073 {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  width: 311px;
+}
+.mobilemobileframe-427319073 {
+  left: calc(50% - 155.5px);
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(14px);
+}
+.mobilemobile {
+  left: calc(50% - 187.5px);
+  color: #1c1c1c;
+  font-family: Inter;
+}
+.mobilemobilemobilesidebar {
+  position: relative;
+  background: linear-gradient(
+    125.12deg,
+    #d8d2fc,
+    #d8d2fc,
+    #d8d2fc 0.01%,
+    #fde2e0 33.85%,
+    #e6e4ea 70.83%,
+    #e0e9f4 99.99%,
+    rgba(230, 225, 232, 0),
+    #e0e9f4
+  );
+  width: 100%;
+  height: 667px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 16px;
+  color: #271e4a;
+  font-family: Kanit;
+}

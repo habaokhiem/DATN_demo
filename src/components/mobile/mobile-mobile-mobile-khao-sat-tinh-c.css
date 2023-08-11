@@ -1,0 +1,287 @@
+.mobilemobilemobileborder {
+  position: absolute;
+  top: 0;
+  right: 2.33px;
+  border-radius: 2.67px;
+  border: 1px solid #191d21;
+  box-sizing: border-box;
+  width: 22px;
+  height: 11.33px;
+  opacity: 0.35;
+  mix-blend-mode: normal;
+}
+.mobilemobilecap-icon {
+  position: absolute;
+  top: 3.67px;
+  right: 0;
+  width: 1.33px;
+  height: 4px;
+  opacity: 0.4;
+  mix-blend-mode: normal;
+}
+.mobilemobilemobilecapacity {
+  position: absolute;
+  top: 2px;
+  right: 4.33px;
+  border-radius: 1.33px;
+  background-color: #191d21;
+  width: 18px;
+  height: 7.33px;
+}
+.mobilemobilebattery1 {
+  position: absolute;
+  top: 17.33px;
+  right: 14.34px;
+  width: 24.33px;
+  height: 11.33px;
+}
+.mobilemobilemobilewifi-icon1 {
+  position: relative;
+  width: 15.33px;
+  height: 11px;
+}
+.mobilemobilemobilecellular-con-icon1 {
+  position: relative;
+  width: 17px;
+  height: 10.67px;
+}
+.mobilemobiletime {
+  position: absolute;
+  top: calc(50% - 3.5px);
+  left: 0;
+  letter-spacing: -0.3px;
+  font-weight: 600;
+  display: inline-block;
+  width: 54px;
+}
+.mobiletime-style1 {
+  position: absolute;
+  top: 7.33px;
+  left: 21px;
+  width: 54px;
+  height: 21px;
+}
+.mobilemobilestatus-bar1 {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 187.5px);
+  width: 375px;
+  height: 44px;
+  color: #191d21;
+  font-family: "SF Pro Text";
+}
+.mobilemobilemobilehome-indicat1 {
+  position: absolute;
+  bottom: 8px;
+  left: calc(50% - 66.5px);
+  border-radius: 100px;
+  background-color: #acb8c2;
+  width: 134px;
+  height: 5px;
+  opacity: 0.4;
+}
+.mobilemobilehome-bar2 {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 187.5px);
+  width: 375px;
+  height: 34px;
+}
+.mobilemobileimage-21-icon3 {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+}
+.mobilevirtuoso9 {
+  position: relative;
+  font-weight: 500;
+}
+.mobileistp-t9 {
+  position: relative;
+  font-size: 24px;
+  color: #fa8c16;
+}
+.mobilevirtuoso-parent7 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 4px;
+}
+.mobilemobileimage-21-parent1 {
+  /* align-self: stretch; */
+  border-bottom: 1px solid #d8d2fc;
+  display: flex;
+  flex-direction: row;
+  padding: 0 0 6px;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.i11 {
+  font-weight: 600;
+}
+.mobile549,
+.mobileintroverted10 {
+  /* flex: 1; */
+  position: relative;
+}
+.mobile549 {
+  text-align: center;
+}
+.mobileintroverted10 {
+  width: 110px;
+}
+.mobileintroverted-parent8 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.mobilethch-cc-ni10 {
+  align-self: stretch;
+  position: relative;
+  font-size: 14px;
+}
+.frame-parent290,
+.frame-parent291 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.frame-parent291 {
+  align-self: stretch;
+  gap: 8px;
+}
+.frame-parent290 {
+  width: 286px;
+  gap: 16px;
+}
+.frame-parent293 {
+  width: 286px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frame-parent289,
+.frame-parent293,
+.mobileframe-427319391 {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.frame-parent289 {
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  font-size: 16px;
+}
+.mobileframe-427319391 {
+  position: absolute;
+  top: 84px;
+  left: calc(50% - 166.5px);
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(216, 210, 252, 0.64);
+  width: 334px;
+  padding: 16px 24px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+.mobilemobilevuesaxlinearside-icon4 {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.mobilemobilevuesaxlinearside-wrapper2 {
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 15px rgba(216, 210, 252, 0.64);
+  backdrop-filter: blur(14px);
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  padding: 8px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+}
+.mobilekho-st-tnh {
+  position: relative;
+  letter-spacing: -1px;
+  line-height: 112%;
+  font-weight: 500;
+}
+.frame-parent296 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.mobilemobileiconoutlinedappl6 {
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+.mobileframe-42731955720,
+.mobilemobileiconoutlinedappl-wrapper2 {
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(216, 210, 252, 0.64);
+  display: flex;
+  flex-direction: row;
+  padding: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.mobileframe-42731955720 {
+  position: absolute;
+  top: 44px;
+  left: calc(50% - 171.5px);
+  border-radius: 10px;
+  width: 343px;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  font-size: 16px;
+}
+.iphone-8-120 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(14px);
+  overflow: hidden;
+}
+.mobilemobilemobilekhaosattinhc {
+  position: relative;
+  background: linear-gradient(
+    125.12deg,
+    #d8d2fc,
+    #d8d2fc,
+    #d8d2fc 0.01%,
+    #fde2e0 33.85%,
+    #e6e4ea 70.83%,
+    #e0e9f4 99.99%,
+    rgba(230, 225, 232, 0),
+    #e0e9f4
+  );
+  width: 100%;
+  height: 667px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 15px;
+  color: #271e4a;
+  font-family: Kanit;
+}
