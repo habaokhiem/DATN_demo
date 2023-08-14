@@ -8,6 +8,8 @@ import { listAcademic } from "../../constants/listAcademic";
 import { listPersonality } from "../../constants/listPersonaliy";
 import { Encrypt } from "../../constants/utils";
 import { list16Personality } from "../../constants/list16Personality";
+import { makeUploadImage } from "../../utils/upload";
+import "./mobile-mobile-mobile-modal-update-a.css";
 
 const ListUser = ({ listUser, page, setPage, setEditUser }) => {
   return (
@@ -265,7 +267,7 @@ const EditUserMobile = ({ editUser, setEditUser }) => {
       .post(`${apiUrl}/update_user`, body)
       .then((res) => {
         setIsShowModalUpdateSuccess(true);
-        setEditUser(null);
+        // setEditUser(null);
         // setScreen("listUser");
       })
       .catch((err) => {
@@ -284,7 +286,14 @@ const EditUserMobile = ({ editUser, setEditUser }) => {
       });
   };
   return (
-    <div className="iphone-8-118">
+    <div
+      onClick={() => {
+        if (isShowModalUpdateSuccess) {
+          setIsShowModalUpdateSuccess(false);
+        }
+      }}
+      className="iphone-8-118"
+    >
       <div className="mobileframe-4273196137">
         <div className="mobile-frame-parent257">
           <div className="mobile-frame-wrapper50">
@@ -352,10 +361,25 @@ const EditUserMobile = ({ editUser, setEditUser }) => {
           </div>
           <div className="mobile-frame-parent259">
             <div className="mobilerectangle-48-parent44">
-              <img
-                className="mobilerectangle-48-icon46"
-                alt=""
-                src={editUser?.image || "/mobilerectangle-48@2x.png"}
+              <div className="mobilerectangle-48-icon46">
+                <label htmlFor="contained-button-file">
+                  <img
+                    className="mobilerectangle-48-icon46"
+                    alt=""
+                    src={image || "/mobilerectangle-48@2x.png"}
+                  />
+                </label>
+              </div>
+              <input
+                id="contained-button-file"
+                type="file"
+                accept="image/*"
+                style={{ display: "none" }}
+                onChange={async (e) => {
+                  const file = e.target.files[0];
+                  let response = await makeUploadImage(file);
+                  setImage(response?.secure_url);
+                }}
               />
               <div className="mobilemobileimage-21-group">
                 {!!personality && (
@@ -895,9 +919,49 @@ const EditUserMobile = ({ editUser, setEditUser }) => {
           </div>
         )}
       </div>
+      {isShowModalUpdateSuccess && (
+        <ModalUpdateSuccess
+          setIsShowModalUpdateSuccess={setIsShowModalUpdateSuccess}
+        />
+      )}
     </div>
   );
 };
+
+const ModalUpdateSuccess = ({ setIsShowModalUpdateSuccess }) => {
+  return (
+    <div className="mobileframe-4273196361">
+      <div className="frame-parent218">
+        <div className="mobilevuesaxlineartick-circl-group">
+          <img
+            className="mobilevuesaxlineartick-circl-icon1"
+            alt=""
+            src="/mobilevuesaxlineartickcircle1.svg"
+          />
+          <div className="mobilevirtuoso4">Thông báo</div>
+          <div className="mobilebn-mun-cp-container1">
+            <span className="mobilebn-mun-cp-container2">
+              <span className="bn-mun-cp1">{`Cập nhật thông tin thành công`}</span>
+              {/* <span className="user13">@User1</span>
+                  <span className="bn-mun-cp1">?</span> */}
+            </span>
+          </div>
+        </div>
+        <div
+          onClick={() => {
+            setIsShowModalUpdateSuccess(false);
+          }}
+          className="frame-wrapper37"
+        >
+          <div className="mobileok-container">
+            <div className="mobilevirtuoso4">OK</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const QuanLyUserMobile = () => {
   const [listUser, setListUser] = useState([]);
   const [page, setPage] = useState(1);

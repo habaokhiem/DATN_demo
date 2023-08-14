@@ -583,7 +583,7 @@
 .tin-nhn-group {
   border-radius: 40px;
   background-color: #fff;
-  box-shadow: 0 4px 15px rgba(216, 210, 252, 0.64);
+  /* box-shadow: 0 4px 15px rgba(216, 210, 252, 0.64); */
   flex-direction: column;
   padding: 28px 16px 16px 28px;
 }

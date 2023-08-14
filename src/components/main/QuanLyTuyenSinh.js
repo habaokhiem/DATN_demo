@@ -294,6 +294,7 @@ export const QLTS = () => {
         <ThongTinChiTiet
           universityPicked={universityPicked}
           setScreen={setScreen}
+          setUniversityPicked={setUniversityPicked}
         />
       )}
     </>
@@ -437,8 +438,15 @@ const ModalAddNew = ({
   );
 };
 
-const ThongTinChiTiet = ({ universityPicked, setScreen }) => {
+const ThongTinChiTiet = ({
+  universityPicked,
+  setScreen,
+  setUniversityPicked,
+}) => {
   console.log("universityPicked: ", universityPicked);
+  const [isEditing, setIsEditing] = useState(false);
+  const [isEditingDaoTao, setIsEditingDaoTao] = useState(false);
+  const [isEditingUniversity, setIsEditingUniversity] = useState(false);
   return (
     <>
       <div className="frame-wrapper130">
@@ -475,7 +483,35 @@ const ThongTinChiTiet = ({ universityPicked, setScreen }) => {
         <div className="frame-parent271">
           <div className="frame-parent272">
             <div className="thng-tin-cc-trng-i-hc-parent7">
-              <div className="thng-tin-cc9">Thông tin các trường Đại học</div>
+              <div
+                style={{
+                  width: "1420px",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <div className="thng-tin-cc9">Thông tin các trường Đại học</div>
+                <div
+                  onClick={() => {
+                    setIsEditingUniversity(!isEditingUniversity);
+                    if (isEditingUniversity) {
+                      axios.post(`${apiUrl}/update_uni`, {
+                        id: universityPicked?.id,
+                        universityName: universityPicked?.universityName,
+                        image: universityPicked?.image,
+                        content: universityPicked?.content,
+                        daoTao: universityPicked?.daoTao,
+                      });
+                    }
+                  }}
+                  className="xem-chi-tit1"
+                  style={{ ...styles.button }}
+                >
+                  {isEditingUniversity ? "Xong" : "Chỉnh sửa"}
+                </div>
+              </div>
+
               {/* <div className="vuesaxlinearsearch-normal-parent2">
                 <img
                   className="vuesaxlinearsearch-normal-icon4"
@@ -487,19 +523,101 @@ const ThongTinChiTiet = ({ universityPicked, setScreen }) => {
             </div>
             <div className="frame-parent273">
               <div className="image-25-wrapper8">
-                <img
-                  className="image-25-icon10"
-                  alt=""
-                  src={
-                    universityPicked?.image ||
-                    "https://res.cloudinary.com/dw5j6ht9n/image/upload/v1690759386/Screenshot_38_pozegj.png"
-                  }
-                />
+                {isEditingUniversity ? (
+                  <label htmlFor="contained-button-file">
+                    <div
+                      style={{
+                        ...styles.button,
+                        justifyContent: "center",
+                        alignItems: "center",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                      className="browe-image-wrapper5"
+                    >
+                      <img
+                        className="image-25-icon10"
+                        alt=""
+                        src={
+                          universityPicked?.image ||
+                          "https://res.cloudinary.com/dw5j6ht9n/image/upload/v1690759386/Screenshot_38_pozegj.png"
+                        }
+                      />
+                      <div
+                        style={{
+                          background: "black",
+                          zIndex: 100,
+                          padding: "10px 20px",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          textAlign: "center",
+                          opacity: 0.5,
+                          color: "#fff",
+                          marginRight: 20,
+                        }}
+                      >
+                        Upload Image
+                      </div>
+                    </div>
+                  </label>
+                ) : (
+                  <img
+                    className="image-25-icon10"
+                    alt=""
+                    src={
+                      universityPicked?.image ||
+                      "https://res.cloudinary.com/dw5j6ht9n/image/upload/v1690759386/Screenshot_38_pozegj.png"
+                    }
+                  />
+                )}
+                {isEditingUniversity && (
+                  <div>
+                    <input
+                      id="contained-button-file"
+                      type="file"
+                      accept="image/*"
+                      style={{ display: "none" }}
+                      onChange={async (e) => {
+                        const file = e.target.files[0];
+                        let response = await makeUploadImage(file);
+                        setUniversityPicked({
+                          ...universityPicked,
+                          image: response?.secure_url,
+                        });
+                      }}
+                    />
+                  </div>
+                )}
               </div>
               <div className="i-hc-ngoi-thng-c-s-h-n-parent2">
-                <div className="i-hc-ngoi16">
-                  {universityPicked?.universityName || "Đại học Bách Khoa"}
-                </div>
+                {isEditingUniversity ? (
+                  <input
+                    className="mobilemobiletm-kim"
+                    style={{
+                      border: "none",
+                      width: "1250px",
+                      outline: "none",
+                      backgroundColor: "#fff",
+                      boxShadow: "none",
+                      fontSize: "32px",
+                      fontWeight: "500",
+                      color: "#271E4A",
+                      fontFamily: "Kanit",
+                    }}
+                    placeholder="Nhập tên trường"
+                    value={universityPicked?.universityName}
+                    onChange={(e) => {
+                      setUniversityPicked({
+                        ...universityPicked,
+                        universityName: e.target.value,
+                      });
+                    }}
+                  ></input>
+                ) : (
+                  <div className="i-hc-ngoi16">
+                    {universityPicked?.universityName || ""}
+                  </div>
+                )}
                 <div className="frame-parent274">
                   <div className="vuesaxlineartimer-parent7">
                     <img
@@ -523,34 +641,257 @@ const ThongTinChiTiet = ({ universityPicked, setScreen }) => {
                 </div>
               </div>
             </div>
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "flex-end",
+              }}
+            >
+              <div
+                onClick={() => {
+                  setIsEditing(!isEditing);
+                  if (isEditing) {
+                    axios.post(`${apiUrl}/update_uni`, {
+                      id: universityPicked?.id,
+                      universityName: universityPicked?.universityName,
+                      image: universityPicked?.image,
+                      content: universityPicked?.content,
+                      daoTao: universityPicked?.daoTao,
+                    });
+                  }
+                }}
+                className="xem-chi-tit1"
+                style={{ ...styles.button }}
+              >
+                {isEditing ? "Xong" : "Chỉnh sửa"}
+              </div>
+            </div>
+
             <div className="thng-tin-cc-trng-i-hc-parent7">
-              {universityPicked?.content.slice(0, -1).map((item, index) => {
+              {universityPicked?.content.map((item, index) => {
                 return (
                   <div key={index} className="thng-tin-cc-trng-i-hc-parent7">
-                    <div className="thng-tin-cc9">{item.title}</div>
-                    {item.content.map((item2, index2) => {
-                      return (
+                    <div
+                      style={{
+                        width: "1420px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      {isEditing ? (
+                        <input
+                          className="mobilemobiletm-kim"
+                          style={{
+                            border: "none",
+                            width: "1450px",
+                            outline: "none",
+                            backgroundColor: "#fff",
+                            boxShadow: "none",
+                            fontSize: "32px",
+                            fontWeight: "500",
+                            color: "#271E4A",
+                            fontFamily: "Kanit",
+                          }}
+                          placeholder="Nhập tiêu đề"
+                          value={item?.title}
+                          onChange={(e) => {
+                            setUniversityPicked({
+                              ...universityPicked,
+                              content: universityPicked.content.map(
+                                (i, idx) => {
+                                  if (idx === index) {
+                                    return {
+                                      ...i,
+                                      title: e.target.value,
+                                    };
+                                  }
+                                  return i;
+                                }
+                              ),
+                            });
+                          }}
+                        ></input>
+                      ) : (
+                        <div className="thng-tin-cc9">{item?.title || ""}</div>
+                      )}
+                      {isEditing && (
+                        <div
+                          onClick={() => {
+                            setUniversityPicked({
+                              ...universityPicked,
+                              content: universityPicked.content.filter(
+                                (i, idx) => idx !== index
+                              ),
+                            });
+                          }}
+                          style={{
+                            ...styles.button,
+                            fontSize: "24px",
+                            color: "red",
+                          }}
+                        >
+                          Xóa
+                        </div>
+                      )}
+                    </div>
+
+                    {item?.content.map((item2, index2) => {
+                      return isEditing ? (
+                        <div
+                          key={index2}
+                          style={{
+                            width: "1420px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "space-between",
+                          }}
+                        >
+                          <input
+                            // className="mobilemobiletm-kim"
+                            style={{
+                              border: "none",
+                              width: "1350px",
+                              outline: "none",
+                              backgroundColor: "#fff",
+                              boxShadow: "none",
+                              fontSize: "20px",
+                              fontWeight: "300",
+                              color: "#271E4A",
+                              fontFamily: "Kanit",
+                            }}
+                            placeholder="Nhập nội dung"
+                            value={item2}
+                            onChange={(e) => {
+                              setUniversityPicked({
+                                ...universityPicked,
+                                content: universityPicked.content.map(
+                                  (i, idx) => {
+                                    if (idx === index) {
+                                      return {
+                                        ...i,
+                                        content: i.content.map((j, jdx) => {
+                                          if (jdx === index2) {
+                                            return e.target.value;
+                                          }
+                                          return j;
+                                        }),
+                                      };
+                                    }
+                                    return i;
+                                  }
+                                ),
+                              });
+                            }}
+                          ></input>
+                          <div
+                            onClick={() => {
+                              setUniversityPicked({
+                                ...universityPicked,
+                                content: universityPicked.content.map(
+                                  (i, idx) => {
+                                    if (idx === index) {
+                                      return {
+                                        ...i,
+                                        content: i.content.filter(
+                                          (j, jdx) => jdx !== index2
+                                        ),
+                                      };
+                                    }
+                                    return i;
+                                  }
+                                ),
+                              });
+                            }}
+                            style={{
+                              ...styles.button,
+                              fontSize: "20px",
+                              color: "red",
+                            }}
+                          >
+                            Xóa
+                          </div>
+                        </div>
+                      ) : (
                         <div key={index2} className="s-mng-ca3">
                           {item2}
                         </div>
                       );
                     })}
+                    {isEditing && (
+                      <div
+                        style={styles.button}
+                        onClick={() => {
+                          setUniversityPicked({
+                            ...universityPicked,
+                            content: universityPicked.content.map((i, idx) => {
+                              if (idx === index) {
+                                return {
+                                  ...i,
+                                  content: [...i.content, ""],
+                                };
+                              }
+                              return i;
+                            }),
+                          });
+                        }}
+                        className="iconoutlinedsuggestedplus-parent44"
+                      >
+                        <img
+                          className="iconoutlinedapplicationdele29"
+                          alt=""
+                          src="./iconoutlinedsuggestedplus.svg"
+                        />
+                        <div className="bng-nhp-thng">Thêm nội dung</div>
+                      </div>
+                    )}
                   </div>
                 );
               }) || null}
             </div>
-          </div>
-          <div className="frame-wrapper76">
-            <div className="thng-tin-cc-trng-i-hc-parent7">
-              <div className="thng-tin-cc9">
-                {universityPicked?.content.slice(-1)[0].title ||
-                  "Cơ sở vật chất"}
+            {isEditing && (
+              <div
+                style={styles.button}
+                onClick={() => {
+                  setUniversityPicked({
+                    ...universityPicked,
+                    content: [
+                      ...universityPicked.content,
+                      {
+                        title: "",
+                        content: [""],
+                      },
+                    ],
+                  });
+                }}
+                className="iconoutlinedsuggestedplus-parent44"
+              >
+                <img
+                  className="iconoutlinedapplicationdele29"
+                  alt=""
+                  src="./iconoutlinedsuggestedplus.svg"
+                />
+                <div className="bng-nhp-thng">Thêm thông tin</div>
               </div>
+            )}
+          </div>
+          {/* <div className="frame-wrapper76">
+            <div className="thng-tin-cc-trng-i-hc-parent7">
+              {isEditing ? (
+                <input></input>
+              ) : (
+                <div className="thng-tin-cc9">
+                  {universityPicked?.content.slice(-1)[0]?.title || "Tổng quan"}
+                </div>
+              )}
               <div className="n-nm-2030-trng-i-hc-ngo-parent1">
                 {universityPicked?.content
                   .slice(-1)[0]
-                  .content.map((item, index) => {
-                    return (
+                  ?.content.map((item, index) => {
+                    return isEditing ? (
+                      <input></input>
+                    ) : (
                       <div key={index} className="n-nm-20306">
                         {item}
                       </div>
@@ -558,135 +899,365 @@ const ThongTinChiTiet = ({ universityPicked, setScreen }) => {
                   })}
               </div>
             </div>
-          </div>
-          <div className="frame-parent272">
-            <div className="thng-tin-cc9">Đào tạo</div>
-            <div className="frame-parent276">
-              <div className="nhm-ngnh-ngn-ng-vn-ho-parent1">
-                <div className="nhm-ngnh-ngn4">
-                  Nhóm ngành Ngôn ngữ - Vặn hoá - Tôn giáo:
-                </div>
-                <div className="nhm-ngnh-ngn-ng-vn-ho-parent1">
-                  <div className="m-ngnh-parent10">
-                    <div className="m-ngnh12">Mã ngành</div>
-                    <div className="tn-ngnh12">Tên ngành</div>
-                    <div className="khi-thi12">Khối thi</div>
-                  </div>
-                  <div className="frame-parent278">
-                    <div className="nth04-parent1">
-                      <div className="nth043">NTH04</div>
-                      <div className="ngn-ng-anh4">Ngôn ngữ Anh</div>
-                      <div className="d016">D01</div>
-                    </div>
-                    <div className="nth04-parent1">
-                      <div className="nth043">NTH05</div>
-                      <div className="ngn-ng-anh4">Ngôn ngữ Pháp</div>
-                      <div className="d016">D01, D03</div>
-                    </div>
-                    <div className="nth04-parent1">
-                      <div className="nth043">NTH06</div>
-                      <div className="ngn-ng-anh4">Ngôn ngữ Trung Quốc</div>
-                      <div className="d016">D01, D04</div>
-                    </div>
-                    <div className="nth04-parent1">
-                      <div className="nth043">NTH07</div>
-                      <div className="ngn-ng-anh4">Ngôn ngữ Nhật</div>
-                      <div className="d016">D01, D06</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="nhm-ngnh-ngn-ng-vn-ho-parent1">
-                <div className="nhm-ngnh-ngn4">
-                  Nhóm ngành Kinh tế - Quản lý:
-                </div>
-                <div className="nhm-ngnh-ngn-ng-vn-ho-parent1">
-                  <div className="m-ngnh-parent10">
-                    <div className="m-ngnh12">Mã ngành</div>
-                    <div className="tn-ngnh12">Tên ngành</div>
-                    <div className="khi-thi12">Khối thi</div>
-                  </div>
-                  <div className="frame-parent278">
-                    <div className="nth04-parent1">
-                      <div className="nth043">NTH01-02</div>
-                      <div className="ngn-ng-anh4">Kinh tế quốc tế</div>
-                      <div className="d016">{`A00, A01, D01, D03, D05, D06, D07 `}</div>
-                    </div>
-                    <div className="nth04-parent1">
-                      <div className="nth043">NTH01-02</div>
-                      <div className="ngn-ng-anh4">Kinh tế</div>
-                      <div className="d016">
-                        A00, A01, D01, D03, D05, D06, D07
-                      </div>
-                    </div>
-                    <div className="nth04-parent1">
-                      <div className="nth043">NTH02</div>
-                      <div className="ngn-ng-anh4">Quản trị kinh doanh</div>
-                      <div className="d016">
-                        A00, A01, D01, D03, D05, D06, D07
-                      </div>
-                    </div>
-                    <div className="nth04-parent1">
-                      <div className="nth043">NTH02</div>
-                      <div className="ngn-ng-anh4">Kinh doanh quốc tế</div>
-                      <div className="d016">
-                        A00, A01, D01, D03, D05, D06, D07
-                      </div>
-                    </div>
-                    <div className="nth04-parent1">
-                      <div className="nth043">NTH03</div>
-                      <div className="ngn-ng-anh4">Kế toán</div>
-                      <div className="d016">
-                        A00, A01, D01, D03, D05, D06, D07
-                      </div>
-                    </div>
-                    <div className="nth04-parent1">
-                      <div className="nth043">NTH03</div>
-                      <div className="ngn-ng-anh4">Tài chính - Ngân hàng</div>
-                      <div className="d016">
-                        A00, A01, D01, D03, D05, D06, D07
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="nhm-ngnh-ngn-ng-vn-ho-parent1">
-                <div className="nhm-ngnh-ngn4">Nhóm ngành Luật:</div>
-                <div className="nhm-ngnh-ngn-ng-vn-ho-parent1">
-                  <div className="m-ngnh-parent10">
-                    <div className="m-ngnh12">Mã ngành</div>
-                    <div className="tn-ngnh12">Tên ngành</div>
-                    <div className="khi-thi12">Khối thi</div>
-                  </div>
-                  <div className="frame-wrapper77">
-                    <div className="nth04-parent1">
-                      <div className="nth043">NTH01-01</div>
-                      <div className="ngn-ng-anh4">Luật</div>
-                      <div className="d016">D01</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="nhm-ngnh-ngn-ng-vn-ho-parent1">
-                <div className="nhm-ngnh-ngn4">Nhóm ngành Du lịch</div>
-                <div className="nhm-ngnh-ngn-ng-vn-ho-parent1">
-                  <div className="m-ngnh-parent10">
-                    <div className="m-ngnh12">Mã ngành</div>
-                    <div className="tn-ngnh12">Tên ngành</div>
-                    <div className="khi-thi12">Khối thi</div>
-                  </div>
-                  <div className="frame-wrapper77">
-                    <div className="nth04-parent1">
-                      <div className="nth043">NTH02</div>
-                      <div className="ngn-ng-anh4">Quản trị khách sạn</div>
-                      <div className="d016">
-                        A00, A01, D01, D03, D05, D06, D07
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          </div> */}
+          <div
+            style={{ overflow: "scroll", height: "3500px" }}
+            className="frame-parent272"
+          >
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <div className="thng-tin-cc9">Đào tạo</div>
+              <div
+                onClick={() => {
+                  setIsEditingDaoTao(!isEditingDaoTao);
+                  if (isEditingDaoTao) {
+                    axios.post(`${apiUrl}/update_uni`, {
+                      id: universityPicked?.id,
+                      universityName: universityPicked?.universityName,
+                      image: universityPicked?.image,
+                      content: universityPicked?.content,
+                      daoTao: universityPicked?.daoTao,
+                    });
+                  }
+                }}
+                className="xem-chi-tit1"
+                style={{ ...styles.button }}
+              >
+                {isEditingDaoTao ? "Xong" : "Chỉnh sửa"}
               </div>
             </div>
+
+            <div className="frame-parent276">
+              {universityPicked?.daoTao?.map((item, index) => {
+                return (
+                  <div key={index} className="nhm-ngnh-ngn-ng-vn-ho-parent1">
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        width: "1420px",
+                      }}
+                    >
+                      {isEditingDaoTao ? (
+                        <input
+                          className="nhm-ngnh-ngn4"
+                          style={{
+                            border: "none",
+                            width: "1450px",
+                            outline: "none",
+                            backgroundColor: "#fff",
+                            boxShadow: "none",
+                            fontSize: "20px",
+                            fontWeight: "400",
+                            color: "#271E4A",
+                            fontFamily: "Kanit",
+                          }}
+                          placeholder="Nhập tên nhóm ngành"
+                          value={item?.nhomNganh}
+                          onChange={(e) => {
+                            setUniversityPicked({
+                              ...universityPicked,
+                              daoTao: universityPicked.daoTao.map((i, idx) => {
+                                if (idx === index) {
+                                  return {
+                                    ...i,
+                                    nhomNganh: e.target.value,
+                                  };
+                                }
+                                return i;
+                              }),
+                            });
+                          }}
+                        ></input>
+                      ) : (
+                        <div className="nhm-ngnh-ngn4">
+                          {item?.nhomNganh || ""}
+                        </div>
+                      )}
+                      {isEditingDaoTao && (
+                        <div
+                          style={{
+                            ...styles.button,
+                            fontSize: "24px",
+                            color: "red",
+                          }}
+                          onClick={() => {
+                            setUniversityPicked({
+                              ...universityPicked,
+                              daoTao: universityPicked.daoTao.filter(
+                                (i, idx) => idx !== index
+                              ),
+                            });
+                          }}
+                        >
+                          Xóa
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="nhm-ngnh-ngn-ng-vn-ho-parent1">
+                      <div className="m-ngnh-parent10">
+                        <div className="m-ngnh12">Mã ngành</div>
+                        <div className="tn-ngnh12">Tên ngành</div>
+                        <div className="khi-thi12">Khối thi</div>
+                      </div>
+                      <div className="frame-parent278">
+                        {item?.listNganh?.map((item2, index2) => {
+                          return (
+                            <div key={index2} className="nth04-parent1">
+                              {isEditingDaoTao ? (
+                                <input
+                                  className="nhm-ngnh-ngn4"
+                                  style={{
+                                    border: "none",
+                                    width: "1100px",
+                                    outline: "none",
+                                    backgroundColor: "#fff",
+                                    boxShadow: "none",
+                                    fontSize: "20px",
+                                    fontWeight: "300",
+                                    color: "#271E4A",
+                                    fontFamily: "Kanit",
+                                  }}
+                                  placeholder="Nhập mã ngành"
+                                  value={item2?.maNganh}
+                                  onChange={(e) => {
+                                    setUniversityPicked({
+                                      ...universityPicked,
+                                      daoTao: universityPicked.daoTao.map(
+                                        (i, idx) => {
+                                          if (idx === index) {
+                                            return {
+                                              ...i,
+                                              listNganh: i.listNganh.map(
+                                                (j, jdx) => {
+                                                  if (jdx === index2) {
+                                                    return {
+                                                      ...j,
+                                                      maNganh: e.target.value,
+                                                    };
+                                                  }
+                                                  return j;
+                                                }
+                                              ),
+                                            };
+                                          }
+                                          return i;
+                                        }
+                                      ),
+                                    });
+                                  }}
+                                ></input>
+                              ) : (
+                                <div className="nth043">
+                                  {item2?.maNganh || ""}
+                                </div>
+                              )}
+                              {isEditingDaoTao ? (
+                                <input
+                                  // className="ngn-ng-anh4"
+                                  style={{
+                                    border: "none",
+                                    width: "1460px",
+                                    outline: "none",
+                                    backgroundColor: "#fff",
+                                    boxShadow: "none",
+                                    fontSize: "20px",
+                                    fontWeight: "300",
+                                    color: "#271E4A",
+                                    fontFamily: "Kanit",
+                                  }}
+                                  placeholder="Nhập tên ngành"
+                                  value={item2?.tenNganh}
+                                  onChange={(e) => {
+                                    setUniversityPicked({
+                                      ...universityPicked,
+                                      daoTao: universityPicked.daoTao.map(
+                                        (i, idx) => {
+                                          if (idx === index) {
+                                            return {
+                                              ...i,
+                                              listNganh: i.listNganh.map(
+                                                (j, jdx) => {
+                                                  if (jdx === index2) {
+                                                    return {
+                                                      ...j,
+                                                      tenNganh: e.target.value,
+                                                    };
+                                                  }
+                                                  return j;
+                                                }
+                                              ),
+                                            };
+                                          }
+                                          return i;
+                                        }
+                                      ),
+                                    });
+                                  }}
+                                ></input>
+                              ) : (
+                                <div className="ngn-ng-anh4">
+                                  {item2?.tenNganh || ""}
+                                </div>
+                              )}
+                              {isEditingDaoTao ? (
+                                <input
+                                  className="nhm-ngnh-ngn4"
+                                  style={{
+                                    border: "none",
+                                    width: "600px",
+                                    outline: "none",
+                                    backgroundColor: "#fff",
+                                    boxShadow: "none",
+                                    fontSize: "20px",
+                                    fontWeight: "300",
+                                    color: "#271E4A",
+                                    fontFamily: "Kanit",
+                                  }}
+                                  placeholder="Nhập khối"
+                                  value={item2?.khoiThi}
+                                  onChange={(e) => {
+                                    setUniversityPicked({
+                                      ...universityPicked,
+                                      daoTao: universityPicked.daoTao.map(
+                                        (i, idx) => {
+                                          if (idx === index) {
+                                            return {
+                                              ...i,
+                                              listNganh: i.listNganh.map(
+                                                (j, jdx) => {
+                                                  if (jdx === index2) {
+                                                    return {
+                                                      ...j,
+                                                      khoiThi: e.target.value,
+                                                    };
+                                                  }
+                                                  return j;
+                                                }
+                                              ),
+                                            };
+                                          }
+                                          return i;
+                                        }
+                                      ),
+                                    });
+                                  }}
+                                ></input>
+                              ) : (
+                                <div className="d016">
+                                  {item2?.khoiThi || ""}
+                                </div>
+                              )}
+                              {isEditingDaoTao && (
+                                <div
+                                  style={{
+                                    ...styles.button,
+                                    fontSize: "20px",
+                                    color: "red",
+                                  }}
+                                  onClick={() => {
+                                    setUniversityPicked({
+                                      ...universityPicked,
+                                      daoTao: universityPicked.daoTao.map(
+                                        (i, idx) => {
+                                          if (idx === index) {
+                                            return {
+                                              ...i,
+                                              listNganh: i.listNganh.filter(
+                                                (j, jdx) => jdx !== index2
+                                              ),
+                                            };
+                                          }
+                                          return i;
+                                        }
+                                      ),
+                                    });
+                                  }}
+                                >
+                                  Xóa
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                    {isEditingDaoTao && (
+                      <div
+                        style={{ ...styles.button, width: "1350px" }}
+                        onClick={() => {
+                          setUniversityPicked({
+                            ...universityPicked,
+                            daoTao: universityPicked.daoTao.map((i, idx) => {
+                              if (idx === index) {
+                                return {
+                                  ...i,
+                                  listNganh: [
+                                    ...i.listNganh,
+                                    {
+                                      maNganh: "",
+                                      tenNganh: "",
+                                      khoiThi: "",
+                                    },
+                                  ],
+                                };
+                              }
+                              return i;
+                            }),
+                          });
+                        }}
+                        className="iconoutlinedsuggestedplus-parent44"
+                      >
+                        <img
+                          className="iconoutlinedapplicationdele29"
+                          alt=""
+                          src="./iconoutlinedsuggestedplus.svg"
+                        />
+                        <div className="bng-nhp-thng">Thêm ngành</div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+            {isEditingDaoTao && (
+              <div
+                style={{ ...styles.button, width: "1350px" }}
+                onClick={() => {
+                  setUniversityPicked({
+                    ...universityPicked,
+                    daoTao: [
+                      ...universityPicked.daoTao,
+                      {
+                        nhomNganh: "",
+                        listNganh: [
+                          {
+                            maNganh: "",
+                            tenNganh: "",
+                            khoiThi: "",
+                          },
+                        ],
+                      },
+                    ],
+                  });
+                }}
+                className="iconoutlinedsuggestedplus-parent44"
+              >
+                <img
+                  className="iconoutlinedapplicationdele29"
+                  alt=""
+                  src="./iconoutlinedsuggestedplus.svg"
+                />
+                <div className="bng-nhp-thng">Thêm nhóm ngành</div>
+              </div>
+            )}
           </div>
         </div>
       </div>

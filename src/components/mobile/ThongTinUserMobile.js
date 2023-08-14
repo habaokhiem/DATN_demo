@@ -7,6 +7,8 @@ import { apiUrl } from "../../constants/api";
 import { list16Personality } from "../../constants/list16Personality";
 import { listAcademic } from "../../constants/listAcademic";
 import { listPersonality } from "../../constants/listPersonaliy";
+import { makeUploadImage } from "../../utils/upload";
+import "./mobile-mobile-mobile-modal-update-a.css";
 
 const ModalRequestAdmin = ({ setIsShowModalRequestAdmin, requestAdmin }) => {
   return (
@@ -201,18 +203,22 @@ const ThongTinUserMobile = ({ editUser, setPage, setUserAdmin }) => {
     axios
       .post(`${apiUrl}/update_user`, body)
       .then((res) => {
-        setIsShowModalUpdateSuccess(true);
-        axios.get(`${apiUrl}/user/${editUser?.id}`).then((res) => {
-          let user = res.data.data[0];
-          localStorage.setItem("user", JSON.stringify(user));
-          setUser(user);
-          setUserAdmin(user);
-        });
-        if (user?.permission) {
-          setPage("thongKe");
-        } else {
-          setPage("home");
-        }
+        axios
+          .get(`${apiUrl}/user/${editUser?.id}`)
+          .then((res) => {
+            let user = res.data.data[0];
+            localStorage.setItem("user", JSON.stringify(user));
+            setUser(user);
+            setUserAdmin(user);
+          })
+          .then(() => {
+            setIsShowModalUpdateSuccess(true);
+          });
+        // if (user?.permission) {
+        //   setPage("thongKe");
+        // } else {
+        //   setPage("home");
+        // }
         // setEditUser(null);
         // setScreen("listUser");
       })
@@ -260,6 +266,9 @@ const ThongTinUserMobile = ({ editUser, setPage, setUserAdmin }) => {
         if (isShowModalRequestAdmin) {
           setIsShowModalRequestAdmin(false);
         }
+        if (isShowModalUpdateSuccess) {
+          setIsShowModalUpdateSuccess(false);
+        }
       }}
       className="iphone-8-119"
     >
@@ -300,10 +309,24 @@ const ThongTinUserMobile = ({ editUser, setPage, setUserAdmin }) => {
           </div>
           <div className="mobile-frame-parent275-main">
             <div className="mobilemobilerectangle-48-group">
-              <img
-                className="mobilemobilerectangle-48-icon1"
-                alt=""
-                src={user?.image || "/mobilerectangle-48@2x.png"}
+              <label htmlFor="contained-button-file">
+                <img
+                  className="mobilemobilerectangle-48-icon1"
+                  alt=""
+                  src={image || "/mobilerectangle-48@2x.png"}
+                />
+              </label>
+              <input
+                id="contained-button-file"
+                type="file"
+                accept="image/*"
+                style={{ display: "none" }}
+                onChange={async (e) => {
+                  const file = e.target.files[0];
+                  let response = await makeUploadImage(file);
+                  console.log("response?.secure_url: ", response?.secure_url);
+                  setImage(response?.secure_url);
+                }}
               />
               <div className="mobilemobileimage-21-container">
                 <img
@@ -837,6 +860,45 @@ const ThongTinUserMobile = ({ editUser, setPage, setUserAdmin }) => {
           requestAdmin={requestAdmin}
         />
       )}
+      {isShowModalUpdateSuccess && (
+        <ModalUpdateSuccess
+          setIsShowModalUpdateSuccess={setIsShowModalUpdateSuccess}
+        />
+      )}
+    </div>
+  );
+};
+
+const ModalUpdateSuccess = ({ setIsShowModalUpdateSuccess }) => {
+  return (
+    <div className="mobileframe-4273196361">
+      <div className="frame-parent218">
+        <div className="mobilevuesaxlineartick-circl-group">
+          <img
+            className="mobilevuesaxlineartick-circl-icon1"
+            alt=""
+            src="/mobilevuesaxlineartickcircle1.svg"
+          />
+          <div className="mobilevirtuoso4">Thông báo</div>
+          <div className="mobilebn-mun-cp-container1">
+            <span className="mobilebn-mun-cp-container2">
+              <span className="bn-mun-cp1">{`Cập nhật thông tin thành công`}</span>
+              {/* <span className="user13">@User1</span>
+                  <span className="bn-mun-cp1">?</span> */}
+            </span>
+          </div>
+        </div>
+        <div
+          onClick={() => {
+            setIsShowModalUpdateSuccess(false);
+          }}
+          className="frame-wrapper37"
+        >
+          <div className="mobileok-container">
+            <div className="mobilevirtuoso4">OK</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Dashboard } from "./Dashboard";
 import { GoiYNguyenVong } from "./GoiYNguyenVong";
 import { KSTC } from "./KhaoSatTinhCach";
@@ -19,6 +19,7 @@ export const Admin = ({
   const [isHide, setIsHide] = useState(true);
   const [page, setPage] = useState("home");
   const [isShowLogout, setIsShowLogout] = useState(false);
+
   return (
     <div
       onClick={() => {

@@ -69,7 +69,7 @@ const DetailUniversity = ({ uni, setUni }) => {
     setUni(newUni);
   };
   return (
-    <div className="iphone-8-19">
+    <div style={{ overflow: "scroll" }} className="iphone-8-19">
       <div className="mobileframe-4273195491">
         <div className="mobile-frame-parent215">
           <div className="mobilethng-tin-cc-trng-i-parent1">
@@ -223,7 +223,7 @@ const DetailUniversity = ({ uni, setUni }) => {
               <div className="mobile-frame-parent225">
                 {uni?.daoTao?.map((item, index) => {
                   return (
-                    <div className="mobile-frame-parent226">
+                    <div key={index} className="mobile-frame-parent226">
                       <div className="mobiletng-quan-parent1">
                         {/* <div className="mobilengnh-ngn-ng3">
                           Ngành Ngôn ngữ - Vặn hoá - Tôn giáo:
@@ -325,7 +325,7 @@ const DetailUniversity = ({ uni, setUni }) => {
                                 <input
                                   style={{
                                     border: "none",
-                                    width: "100%",
+                                    width: "260px",
                                     outline: "none",
                                     backgroundColor: "#fff",
                                     boxShadow: "none",

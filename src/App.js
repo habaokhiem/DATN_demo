@@ -15,6 +15,10 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    window.history.scrollRestoration = "manual";
+  }, []);
+
   const isMobile = width <= 1190;
 
   return isMobile ? <Mobile /> : <Main />;

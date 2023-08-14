@@ -846,7 +846,7 @@
   box-shadow: 0 4px 15px rgba(216, 210, 252, 0.64);
   backdrop-filter: blur(15px);
   width: 535px;
-  height: 402px;
+  /* height: 402px; */
   flex-direction: column;
   padding: 28px 16px 16px 28px;
   box-sizing: border-box;
